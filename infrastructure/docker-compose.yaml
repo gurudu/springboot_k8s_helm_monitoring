@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  app:
+    container_name: order_service
+    image: order_management
+    build: ..
+    ports:
+      - "8081:8081"
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+    depends_on:
+      - database
+  database:
+    container_name: order_db
+    image: postgres:14
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PW}
+    volumes:
+      - ./infrastructure/db.sql:/docker-entrypoint-initdb.d/db.sql
+      - order-data:/var/lib/postgresql/data #persist data even if container shuts down
+  pgadmin:
+    # UI is available at http://localhost:5050/browser/, server connection params are hostname: postgres-order, port: 5432 and use above database credentials
+    container_name: pgadmin4
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_MAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PW}
+    ports:
+      - '5050:80'
+
+volumes:
+  order-data: # named volumes can be managed easier using docker-compose
