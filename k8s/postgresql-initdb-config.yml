@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgresql-initdb-config
+data:
+  init.sql: |
+    CREATE ROLE "order_users" SUPERUSER;
+    CREATE ROLE "order_admins" SUPERUSER;
+    CREATE ROLE "order-systemtest" SUPERUSER;
+    GRANT ALL PRIVILEGES ON DATABASE "postgres-order" TO "order_users";

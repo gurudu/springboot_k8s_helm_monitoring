@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: order_app_service
+spec:
+  selector:
+    app: order-api
+    tier: backend
+  type: NodePort
+  ports:
+    - port: 8081
+      targetPort: 8081
+      nodePort: 30080
+      protocol: TCP
