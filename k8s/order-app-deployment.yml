@@ -16,7 +16,7 @@ spec:
      spec:
        containers:
          - name: order-api
-           image: order_management
+           image: hari416/order_management:0.0.3
            imagePullPolicy: IfNotPresent
            ports:
              - containerPort: 8081
@@ -36,6 +36,4 @@ spec:
                  secretKeyRef:
                    name: order-secret
                    key: db_pwd
-
-
 
