@@ -1,2 +1,2 @@
-# springboot-web app deployed to kubenetes cluster and monitored using prometheus and Grafana
+## Springboot-web app deployed to Kubernetes Cluster and monitored using Prometheus and Grafana
 
