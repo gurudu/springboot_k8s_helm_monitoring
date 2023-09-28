@@ -14,8 +14,7 @@
        * Gradle as Build tool
        * Springboot version: 3.1.4
        * PostgreSQL 14
- 4. To deploy application to Kubernetes cluster:
-     install minikube to containerize the application :
+ 4. To deploy application to Kubernetes cluster (used minikube):
     * commands to use to run the project:
         *  gradle build
         *  docker build -t order_management .
