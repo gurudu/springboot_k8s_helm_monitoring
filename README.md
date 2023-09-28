@@ -1,2 +1,2 @@
-# springboot-basic-hexagonal-architecture-app
-springboot rest -jpa-hexagonal-architecture-application
+# springboot-web app deployed to kubenetes cluster and monitored using prometheus and Grafana
+
