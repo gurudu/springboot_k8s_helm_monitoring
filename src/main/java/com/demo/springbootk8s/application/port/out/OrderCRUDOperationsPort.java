@@ -15,4 +15,6 @@ public interface OrderCRUDOperationsPort {
     boolean delete(Long id);
 
     boolean update(OrderRequest o, Long id);
+
+    List<OrderResponse> findAll();
 }
