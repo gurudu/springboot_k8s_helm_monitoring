@@ -66,4 +66,9 @@ public class OrderPersistenceAdapter implements OrderCRUDOperationsPort {
             return false;
         }
     }
+
+    @Override
+    public List<OrderResponse> findAll() {
+        return orderMapper.orderToOrderResponse(orderRepository.findAll());
+    }
 }

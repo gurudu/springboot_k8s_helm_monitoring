@@ -20,6 +20,11 @@ public class OrderServiceImpl implements OrderService {
     private static final Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
 
     @Override
+    public List<OrderResponse> findAll() {
+        return orderCRUDOperationsPort.findAll();
+    }
+
+    @Override
     public OrderResponse findById(Long id) {
         return orderCRUDOperationsPort.findById(id);
     }

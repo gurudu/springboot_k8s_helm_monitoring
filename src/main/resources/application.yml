@@ -1,3 +1,15 @@
 spring:
   profiles:
     active: local
+management:
+  endpoint:
+     info:
+       enabled: true
+  endpoints:
+     web:
+      exposure:
+        include: health,metrics,prometheus,loggers
+  metrics:
+    export:
+      prometheus:
+        enabled: true

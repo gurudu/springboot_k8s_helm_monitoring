@@ -6,6 +6,8 @@ import com.demo.springbootk8s.application.domain.model.OrderResponse;
 import java.util.List;
 
 public interface OrderService {
+
+    List<OrderResponse> findAll();
     OrderResponse findById(Long id);
 
     OrderResponse orderInsert(OrderRequest o);

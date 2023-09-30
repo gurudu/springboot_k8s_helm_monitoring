@@ -33,6 +33,12 @@ public class OrderRESTController {
         return new ResponseEntity<OrderResponse>(result, HttpStatus.OK);
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<OrderResponse>> getAllOrders() {
+        List<OrderResponse> result = orderService.findAll();
+        return new ResponseEntity<List<OrderResponse>>(result, HttpStatus.OK);
+    }
+
     @DeleteMapping("/cancel/{id}")
     public ResponseEntity<Void> cancelOrder(@PathVariable Long id) {
         if (id != null && orderService.delete(id)) {

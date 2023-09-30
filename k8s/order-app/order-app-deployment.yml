@@ -13,11 +13,15 @@ spec:
        labels:
          app: order-api
          tier: backend
+       annotations:
+         prometheus.io/scrape: "true"
+         prometheus.io/port: "8081"
+         prometheus.io/path: "/actuator/prometheus"
      spec:
        containers:
          - name: order-api
-           image: hari416/order_management:0.0.3
-           imagePullPolicy: IfNotPresent
+           image: order_management:0.0.6
+           imagePullPolicy: Never
            ports:
              - containerPort: 8081
            env:
