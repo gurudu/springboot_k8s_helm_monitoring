@@ -5,6 +5,3 @@ metadata:
 data:
   db_name: postgresdb
   db_url: jdbc:postgresql://order-db-service:5433/postgresdb
-
-  #POSTGRES_DB: postgres-order
-  #DATABASE_URL: jdbc:postgresql://order_db:5432/postgres-order
