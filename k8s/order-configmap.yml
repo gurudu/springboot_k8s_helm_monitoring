@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: order-config
-data:
-  db_name: postgresdb
-  db_url: jdbc:postgresql://order-db-service:5433/postgresdb
