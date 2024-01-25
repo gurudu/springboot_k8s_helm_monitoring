@@ -14,6 +14,9 @@
        * Gradle as Build tool
        * Springboot version: 3.1.4
        * PostgreSQL 14
+       * Kubernetes
+       * Helm
+       * Monitoring tools : Promotheus and Grafana
  4. To deploy application to Kubernetes cluster (used minikube):
     * commands to use to run the project:
         *  gradle build
